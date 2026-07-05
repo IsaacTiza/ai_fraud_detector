@@ -30,3 +30,4 @@ desktop.ini
 .idea/
 *.swpbackend/data/ 
 backend/artifacts/*.joblib 
+backend/data/*.csv 
