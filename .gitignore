@@ -1,0 +1,32 @@
+# Environment secrets
+.env
+.env.local
+*.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ML model artifacts (large binary files — don't bloat git history)
+backend/artifacts/*.pkl
+backend/artifacts/*.joblib
+
+# Node / React frontend
+node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swpbackend/data/ 
+backend/artifacts/*.joblib 
