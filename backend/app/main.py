@@ -3,16 +3,20 @@ from app.services.ml_service import load_model
 from app.db.mongo import ping_database
 from app.routers import predict, analytics
 from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(title="Fraud Detection API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://ai-fraud-detector-eight.vercel.app"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://ai-fraud-detector-eight.vercel.app",
+    ],
+    allow_origin_regex=r"https://ai-fraud-detector-[a-z0-9-]+-isaactizas-projects\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 app.include_router(predict.router)
 app.include_router(analytics.router)
